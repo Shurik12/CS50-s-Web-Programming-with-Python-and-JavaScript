@@ -1,0 +1,29 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Comments for listing {{ listing }}</h2>
+    {% if comments %}
+    <div class="col-12">
+	    <ul>
+	    {% for comment in comments %}
+	    	<li class="clearfix">
+				<div class="post-comments">
+			    	<p class="meta"> {{ comment.date }} <a href="#">{{ comment.user }}</a> says: <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+			      	<p>{{ comment.comment_text }}</p>
+			  	</div>
+			</li>
+	    {% endfor %}
+	    </ul>
+	    <form action="{% url 'auctions:comment' listing %}">{% csrf_token %}
+	    	<button type="submit" class="btn btn-primary float-right" formaction="{% url 'auctions:listing' listing %}"> return to listing </button>
+	    	<button type="submit" class="btn btn-primary float-right"> add comment </button>
+	    </form>
+	</div>
+	{% else %}
+	    <p>This listing has no comments yet</p>
+	    <form action="{% url 'auctions:comment' listing %}">{% csrf_token %}
+	    	<button type="submit" class="btn btn-primary float-right" formaction="{% url 'auctions:listing' listing %}"> return to listing </button>
+	    	<button type="submit" class="btn btn-primary float-right"> add comment </button>
+	    </form>
+	{% endif %}
+{% endblock %}

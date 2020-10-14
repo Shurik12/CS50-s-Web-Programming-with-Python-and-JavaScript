@@ -1,0 +1,8 @@
+.alert {
+  margin: 20px; }
+
+p::selection {
+  color: red;
+  background-color: yellow; }
+
+/*# sourceMappingURL=style.css.map */

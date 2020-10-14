@@ -1,0 +1,13 @@
+img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+}
+
+.page {
+	padding: 10px 10px 10px 10px;
+}
+
+h2 {
+	padding-left: 20px;
+}

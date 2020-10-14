@@ -1,0 +1,2 @@
+#Encyclopedia - educational project
+Django project encyclopedia. It includes 3 functions: Home - move to home page, Create New Page, Random Page - move to randome page. Users can go to title page. Also users can edit any pages in this wiki. This project has any tests and also admin page.

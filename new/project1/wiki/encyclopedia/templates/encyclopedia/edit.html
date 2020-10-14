@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ name }}
+{% endblock %}
+
+{% block body %}
+	<form action="/wiki/{{ name }}/" method="post">{% csrf_token %}
+		<!-- <input type="text" name="page_changes" value="{{ content }}"> -->
+		<div class="col-sm-6">
+			<textarea required class="form-control" cols="30" rows="10" name="page_changes">{{ content }}</textarea>	
+			<button> save changes </button>
+		</div>
+	</form>
+{% endblock %}

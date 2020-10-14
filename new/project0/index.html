@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8" />
+        <script>
+            function request_get(){
+            	var query = document.querySelector('#query').value;
+                document.location.href = "https://www.google.ru/search?q="+query;
+				return false;
+			};
+			function lucky(){
+
+				var query = document.querySelector('#query').value;
+				let url = new URL('https://google.com/search');
+				url.searchParams.set('q', query);
+				var myRequest = new XMLHttpRequest();
+				myRequest.open('GET', url);
+				myRequest.setRequestHeader('Access-Control-Allow-Origin', '*')
+				try {
+				  myRequest.send();
+				  if (myRequest.status != 200) {
+				    alert(`Ошибка ${myRequest.status}: ${myRequest.statusText}`);
+				  } else {
+				    alert(myRequest.response);
+				  }
+				} catch(err) { // для отлова ошибок используем конструкцию try...catch вместо onerror
+				  alert("Запрос не удался");
+				}
+			};
+
+        </script>
+    </head>
+    <body>
+		<header>
+			<div class="container">
+		    <a href="" class="logo">Логотип</a>
+		    <nav>
+		      <ul>
+		        <li><a href="first.html">home</a></li>
+		        <li><a href="image.html">image search</a></li>
+		        <li><a href="advanced.html">advanced search</a></li>
+		      </ul>
+		    </nav>
+		  </div>
+		</header>
+    	<h1 align="center"> My search </h1>
+    	<img src="images/icon.jpeg">
+        <form name="form" style="text-align: center">
+            <input id="query" type="text">
+            <input type="submit" onclick="return request_get()" value="Google Search">
+         	<!-- <button onclick="return lucky()">Click Here!</button> -->
+        </form>
+
+    </body>
+</html>
+
+
+
+

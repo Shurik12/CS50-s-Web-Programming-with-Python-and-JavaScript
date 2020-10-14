@@ -1,0 +1,17 @@
+body {
+    padding: 10px;
+}
+
+h6 {
+	color: gray;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+img {
+	/* сверху | справа | снизу | слева */
+	margin: 10px 10px 10px 0;
+}

@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ name }}
+{% endblock %}
+
+{% block body %}
+	{{ content | safe }}
+	<form action="/wiki/{{ name }}/edit/">
+		<button> edit page </button>
+	</form>
+{% endblock %}

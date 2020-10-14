@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Webpage</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .row > div {
+                padding: 20px;
+                background-color: blue;
+                border: 2px solid orange;
+            }
+            .grid {
+                background-color: yellow;
+                display: grid;
+                padding: 20px;
+                grid-column-gap: 20px;
+                grid-row-gap: 10px;
+                grid-template-columns: auto 100px auto;
+            }
+
+            .grid-item {
+                background-color: white;
+                font-size: 15px;
+                padding: 15px;
+                text-align: right;
+            }
+            table { 
+                    width: 60%; /* Ширина таблицы */
+                    border: 4px double black; /* Рамка вокруг таблицы */
+                    border-collapse: collapse; /* Отображать только одинарные линии */
+            }
+            th {
+                text-align: left; /* Выравнивание по левому краю */
+                background: #ccc; /* Цвет фона ячеек */
+                padding: 5px; /* Поля вокруг содержимого ячеек */
+                border: 1px solid black; /* Граница вокруг ячеек */
+            }
+            td {
+                padding: 5px; /* Поля вокруг содержимого ячеек */
+                border: 1px solid black; /* Граница вокруг ячеек */
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>&nbsp;</th> <th>Name</th> <th>Last name</th>
+            </tr>
+            <tr>
+                <td> я </td>
+                <td> иван </td>
+                <td> васильевич </td>
+            </tr>
+            <tr>
+                <td> я </td>
+                <td> петр </td>
+                <td> игнатьевич </td>
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    This is a section.
+                </div>
+                <div class="col-6">
+                    This is another section.
+                </div>
+                <div class="col-3">
+                    This is a third section.
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item">12</div>
+        </div>
+    </body>
+</html>
+
+
+

@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2> Listing: {{ listing.name }} </h2>
+	<form action="{% url 'auctions:listing' listing.name %}" method="post">{% csrf_token %}
+		{% if count == 1 %}
+	    	<button type="button" class="btn btn-secondary" name="watchlist"> Watchlist </button>
+		{% else %}
+			<button type="submit" class="btn btn-secondary" name="watchlist"> Add to watchlist </button>
+		{% endif %}
+    </form>
+    <img src="{{ listing.image_url }}" class="img-fluid rounded float-left" alt="alternatetext">
+    <br>
+    <div class="justify-content-left">
+	    <p> {{ listing.description }} </p>
+	    <h4> ${{ listing.price }} </h4>
+	    <h6> {{ listing.count_bids }} bid(s) so far. Your bid is the current bid. </h6>
+	    <form action="{% url 'auctions:listing' listing.name %}" method="post">{% csrf_token %}
+			<div>
+				<input required class="form-control col-sm-12" name="bid" placeholder="Bid">
+				<button type="submit" class="btn btn-primary"> Place bid </button>
+			</div>
+		</form>
+		<form action="{% url 'auctions:comments' listing.name %}">
+			<button type="submit" class="btn btn-primary float-right"> show comments </button>
+		</form>
+	</div>
+	<h3> Details </h3>
+	<ul>
+		<li> Listed by: {{ listing.user_name }} </li>
+		<li> Category: {{ category }} </li>
+	</ul>
+{% endblock %}

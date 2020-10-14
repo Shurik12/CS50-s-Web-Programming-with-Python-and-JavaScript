@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+	Create new page
+{% endblock %}
+
+{% block body %}
+	<form action="/" method="post">{% csrf_token %}>
+		<!-- <input type="text" name="page_changes" value="{{ content }}"> -->
+		<div class="col-sm-6">
+        	<input type="text" class="form-control" name="name_page" required placeholder="name of page">
+	    	<textarea class="form-control" name="text_page" rows="10" required placeholder="text of page"></textarea>
+	    	<div class="btn-toolbar"><button> create page </button></div>
+		</div>
+	</form>
+{% endblock %}
